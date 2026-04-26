@@ -3,11 +3,13 @@
 
 A high-performance Java Spring Boot and Python data pipeline that captures raw GitHub event streams, processes them using a Medallion Data Architecture, and extracts real-time insights into LLM adoption trends (GPT-4, Llama 3, Claude 4) across global developer activity.
 
-Medallion Architecture: Implemented a two-tier data strategy.
+Medallion Architecture: Implemented a three-tier data strategy.
 
 Bronze Layer (Raw): High-volume ingestion of raw JSON event data into PostgreSQL via Python.
 
 Silver Layer (Refined): Cleaned, categorized "Mentions" extracted via Java Spring Boot logic.
+
+Integrated a Cloud Data Warehouse (Snowflake) via JDBC, implementing a Gold Layer designed for high-concurrency analytical queries and trend reporting.
 
 Automated ETL Pipeline: Engineered a Scheduled Service in Spring Boot that polls the database every 10 seconds to process "Dirty" records into structured insights.
 
